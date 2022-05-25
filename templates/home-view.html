@@ -13,7 +13,7 @@
 
     {% for obj in  object_list %}
         <ul>
-            <li> The first object Id is {{ obj.id }}</li>
+            <li> The object detail page here <a href="{% url "article-detail" obj.id %}"> click me</a></li>
             {% if obj.title %}
             <li>The article title is {{ obj.title }}</li>
             {% endif %}
