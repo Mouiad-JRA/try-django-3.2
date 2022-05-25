@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+{% block content %}
+
+    <br>
+
+    {% for obj in  object_list %}
+        <ul>
+            <li> The first object Id is {{ obj.id }}</li>
+            {% if obj.title %}
+            <li>The article title is {{ obj.title }}</li>
+            {% endif %}
+            <li> The article content is {{ obj.content }}</li>
+        </ul>
+    {% endfor %}
+
+{% endblock %}
+</html>
