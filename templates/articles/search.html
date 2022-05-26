@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% if object %}
+    <title>{% block title %}{{ object.title }} {% endblock %}</title>
+{% endif %}
+{% block content %}
+    <H1>Hello Guys</H1>
+<form action="{% url 'search-article' %}" method="GET">
+    <label>
+        <input type="text" name="query" />
+    </label>
+    <input type="submit" />
+</form>
+    {% if object %}
+        The  article title is {{ object.title }}
+        <br>
+        The content are {{ object.content }}
+    {% endif %}
+{% endblock %}

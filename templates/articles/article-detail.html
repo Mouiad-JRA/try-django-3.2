@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ article.title }} {% endblock %}</title>
+{% block content %}
+The  article title is {{ article.title }}
+<br>
+The content are {{ article.content }}
+{% endblock %}
+

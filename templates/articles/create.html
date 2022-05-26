@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if not created %}
+        <div style="margin-top: 30px;">
+            <form action="." method="post">
+                {% csrf_token %}
+                <div style="margin-top: 10px;">
+                    <label>
+                        <input type="text" name="title" placeholder="Title"/>
+                    </label>
+                </div>
+                <div style="margin-top: 10px;">
+                    <label>
+                        <textarea name="content" placeholder="Content"></textarea>
+                    </label>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button type="submit"> Create A new Article</button>
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <li>Your article was created <a href="{% url "article-detail" object.id %}"> click me</a></li>
+    {% endif %}
+{% endblock %}
